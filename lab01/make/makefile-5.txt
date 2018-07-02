@@ -1,0 +1,19 @@
+#assigning variables with value
+PROG=	test
+OBJS=	one.o main.o two.o three.o
+CFLAGS=	-Wall -g
+#getting 'test' file name to make
+all: ${PROG}
+
+${PROG}: ${OBJS}
+	@echo $@ depends on $?
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
+#%.o = % matches one character pattern ends with .o
+%.o: %.c ext.h one.h
+	#this will comiple dependency files 
+	#and generate .c files with same name
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+clean:
+	#remove 'test' and 'one.o main.o two.o three.o' files
+	rm -f ${PROG} ${OBJS}

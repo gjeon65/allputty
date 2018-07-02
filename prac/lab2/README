@@ -1,0 +1,26 @@
+CS 283
+
+Geun Jeon
+
+Lab2: File I/O Programming
+
+Description:
+
+In this assignment, you will write a program to the following
+specifications, using C file system calls.
+
+Given two directories ./a and ./b, passed as parameters to your program, you
+need to synchronize them, as follows:
+
+if a file in a does not exist in directory b, you should replicate it in
+directory b.
+
+if a file in b does not exist in directory a, it should be deleted from
+directory b.
+
+if a file exists in both directories a and b, the file with the most recent
+modified date /time should be copied from one directory to the other.
+
+
+
+Print a log of your program's activities to stdout or stderr

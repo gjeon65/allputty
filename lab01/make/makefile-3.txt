@@ -1,0 +1,19 @@
+#assigning variable
+PROG=	test
+OBJS=	one.o main.o two.o three.o
+#CFLAGS is commented out
+#CFLAGS=	-Wall -g
+
+#target all has variable PROG which is test in this case
+all: ${PROG}
+
+#PROG has dependencies of OBJ variable (one.o, main.o etc)
+${PROG}: ${OBJS}
+	#will echo out PROG (test) and dependencies
+	@echo $@ depends on $?
+	#make OBJ dependency files to executable
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
+	
+clean:
+	#remove all files that have .o extension.
+	rm -f ls *.o

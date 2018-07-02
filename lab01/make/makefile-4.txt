@@ -1,0 +1,16 @@
+#assigning variables with values
+PROG=	test
+OBJS=	one.o main.o two.o three.o
+cFLAGS=	-Wall -g
+#getting 'test' program name to make
+all: ${PROG}
+#PROG has dependencies of OBJ variable (one.o, main.o etc)
+${PROG}: ${OBJS}
+	#will echo out PROG (test) and dependencies
+	@echo $@ depends on $?
+	#make OBJ dependency files to executable
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
+
+clean:
+	#remove anything named before .o extension
+	rm -f ls *.o

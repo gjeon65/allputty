@@ -1,0 +1,40 @@
+Geun Jeon
+CS-283-002
+Homework 4
+
+Problem 8.11
+
+It will print out 4 hello because i=0 iterates to i<2 and fork function will
+be called 3 times. 
+
+Problem 8.12
+
+It will print out 8 hello because in doit function, hello will be printed out
+4 times in total and 4 times in the main function.
+
+Problem 8.13
+
+it will be:
+x=4
+x=3
+x=2
+
+Because parent process and child process don't share global x.
+
+Problem 8.14
+
+it will print out 3 hello because doit function, hello will be printed out
+twice in doit function and once in main function.
+
+Problem 8.16
+
+it will be:
+counter = 2
+
+Because child process does not share counter variable with parent. Thus, it
+will go to else. Then,program willincrease counter variable to 2.
+
+Problem 8.23
+
+There can be one pending signal. And sleep function will cancel other same
+type signals. so remove sleep function will help.

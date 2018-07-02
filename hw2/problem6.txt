@@ -1,0 +1,2 @@
+The open function returns the lowest descriptor. Therefore, in this case, it
+returns descriptor 4. The fina output should be fd2=4.

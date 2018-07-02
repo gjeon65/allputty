@@ -1,0 +1,21 @@
+#assigning variable with values
+PROG=	test#name of the program
+OBJS=	one.o main.o two.o three.o#names of object files
+CFLAGS=	-Wall -g#options -Wall:warning flags -g: debugging information
+#get program name
+all: ${PROG}#in this case, it is 'test'
+
+#run PROG variable(test) to make files and defend files(one.o etc.) 
+${PROG}: ${OBJS}
+	#$@ is the target of the cuurent rule.
+	#$? is the target of newer dependencies
+	@echo $@ depends on $?
+	${CC} ${LDFLAGS} ${OBJS} -o ${PROG}
+
+.c.o:
+	#$< will get first dependency
+	$(CC) -c $(CFLAGS) -o $@ $<
+	
+clean:
+	rm -f ${PROG} ${OBJS}
+	#removing prog and obj
